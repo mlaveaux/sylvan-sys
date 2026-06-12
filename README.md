@@ -5,7 +5,7 @@
 # Rust Bindings for the Sylvan library
 
 This crate provides unsafe Rust bindings for the parallel multi-terminal 
-binary decision diagram library Sylvan. At the moment, the bindings are based on version `1.7.1` available [on Github](https://github.com/trolando/sylvan). The crate compiles on Linux and MacOS, and if you can build `sylvan` with Visual Studio, it should work on Windows as well (the problem is mostly correctly linking the `gmp` library).
+binary decision diagram library Sylvan. At the moment, the bindings are based on version `1.10.0` available [on Github](https://github.com/trolando/sylvan). The crate compiles on Linux and MacOS, and if you can build `sylvan` with Visual Studio, it should work on Windows as well (the problem is mostly correctly linking the `gmp` library).
 
 > Keep in mind that you will need `cmake` and `gmp` (arbitrary precision numbers) to build Sylvan. Hopefully `gmp` will be soon optional, but for now it is necessary.
 
