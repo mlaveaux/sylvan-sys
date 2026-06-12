@@ -5,7 +5,7 @@
 //! is mostly correctly linking the `gmp` library).
 //!
 //! > Keep in mind that you will need `cmake` and `gmp` (arbitrary precision numbers) to build
-//! Sylvan. Hopefully `gmp` will be soon optional, but for now it is necessary.
+//! > Sylvan. Hopefully `gmp` will be soon optional, but for now it is necessary.
 //!
 //! Since a lot of Sylvan's functionality is defined using preprocessor macros, there is a small
 //! wrapper library (`./wrapper/src`) which exports each macro as a function (this can incur

@@ -1,6 +1,6 @@
-use libc::{c_void, FILE};
+use libc::{FILE, c_void};
 
-extern "C" {
+unsafe extern "C" {
     pub fn Sylvan_stats_init() -> c_void;
     pub fn Sylvan_stats_reset() -> c_void;
     // sylvan_stats_t is a gigantic struct with all performance counter data.

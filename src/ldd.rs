@@ -1,6 +1,6 @@
-use crate::lace::{Task, WorkerP};
 use crate::MDD;
-use libc::{c_char, c_double, c_int, c_long, c_void, size_t, FILE};
+use crate::lace::{Task, WorkerP};
+use libc::{FILE, c_char, c_double, c_int, c_long, c_void, size_t};
 
 pub type LDDMC_ENUM_CB = extern "C" fn(*mut WorkerP, *mut Task, *mut u32, size_t, *mut c_void);
 pub type LDDMC_COLLECT_CB =
@@ -18,7 +18,7 @@ pub struct LDDMCCallbacks {
     pub context: LDDMC_VISIT_INIT_CONTEXT_CB,
 }
 
-extern "C" {
+unsafe extern "C" {
     pub fn Sylvan_init_ldd() -> c_void;
     pub fn Sylvan_lddmc_makenode(value: u32, ifeq: MDD, ifneq: MDD) -> MDD;
     pub fn Sylvan_lddmc_extendnode(mdd: MDD, value: u32, ifeq: MDD) -> MDD;

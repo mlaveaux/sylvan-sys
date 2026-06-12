@@ -1,11 +1,11 @@
 use crate::lace::{Task, WorkerP};
 use crate::{BDD, BDDMAP, BDDSET, BDDVAR, MTBDD};
-use libc::{c_double, c_int, c_void, size_t, FILE};
+use libc::{FILE, c_double, c_int, c_void, size_t};
 
 pub type ENUM_CB = extern "C" fn(*mut WorkerP, *mut Task, *mut c_void, *mut BDDVAR, *mut u8, c_int);
 pub type COLLECT_CB = extern "C" fn(*mut WorkerP, *mut Task, *mut c_void, *mut u8) -> BDD;
 
-extern "C" {
+unsafe extern "C" {
 
     pub fn Sylvan_isconst(bdd: MTBDD) -> c_int;
     pub fn Sylvan_isnode(bdd: MTBDD) -> c_int;

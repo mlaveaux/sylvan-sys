@@ -1,6 +1,6 @@
 use crate::lace::{Task, WorkerP};
 use crate::{MTBDD, MTBDDMAP};
-use libc::{c_char, c_double, c_int, c_long, c_void, size_t, FILE};
+use libc::{FILE, c_char, c_double, c_int, c_long, c_void, size_t};
 use std::marker::{PhantomData, PhantomPinned};
 
 pub type MTBDD_APPLY_OP = extern "C" fn(*mut WorkerP, *mut Task, *mut MTBDD, *mut MTBDD) -> MTBDD;
@@ -31,7 +31,7 @@ pub struct SkipList {
 
 pub type SkipListPtr = *mut SkipList;
 
-extern "C" {
+unsafe extern "C" {
     pub fn Sylvan_init_mtbdd() -> c_void;
     pub fn Sylvan_init_bdd() -> c_void;
     pub fn Sylvan_mtbdd_makeleaf(leaf_type: u32, value: u64) -> MTBDD;

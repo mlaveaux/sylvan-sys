@@ -3,7 +3,7 @@ use libc::{c_int, c_void, size_t};
 
 pub type GC_HOOK_CB = extern "C" fn(*mut WorkerP, *mut Task);
 
-extern "C" {
+unsafe extern "C" {
 
     pub fn Sylvan_init_package() -> c_void;
     pub fn Sylvan_set_sizes(

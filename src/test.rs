@@ -1,3 +1,4 @@
+use crate::MTBDD_TRUE;
 use crate::bdd::{Sylvan_and, Sylvan_xor};
 use crate::common::{
     Sylvan_gc_disable, Sylvan_init_package, Sylvan_quit, Sylvan_register_quit, Sylvan_set_limits,
@@ -7,7 +8,6 @@ use crate::mtbdd::{
     Sylvan_init_bdd, Sylvan_ithvar, Sylvan_mtbdd_not, Sylvan_mtbdd_plus, Sylvan_mtbdd_times,
     Sylvan_nodecount,
 };
-use crate::MTBDD_TRUE;
 
 static mut CALLED: bool = false;
 

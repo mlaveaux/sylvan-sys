@@ -1,4 +1,4 @@
-use libc::{c_char, c_int, c_void, size_t, FILE};
+use libc::{FILE, c_char, c_int, c_void, size_t};
 
 pub type MT_HASH_CB = extern "C" fn(u64, u64) -> u64;
 pub type MT_EQUALS_CB = extern "C" fn(u64, u64) -> c_int;
@@ -8,7 +8,7 @@ pub type MT_TO_STR_CB = extern "C" fn(c_int, u64, *mut c_char, size_t) -> *mut c
 pub type MT_WRITE_BINARY_CB = extern "C" fn(*mut FILE, u64) -> c_int;
 pub type MT_READ_BINARY_CB = extern "C" fn(*mut FILE, *mut u64) -> c_int;
 
-extern "C" {
+unsafe extern "C" {
 
     pub fn Sylvan_init_mt() -> c_void;
     pub fn Sylvan_mt_create_type() -> u32;
