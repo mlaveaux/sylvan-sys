@@ -1,0 +1,6 @@
+[submodule "3rd-party/lace"]
+	path = 3rd-party/lace
+	url = https://github.com/trolando/lace.git
+[submodule "3rd-party/sylvan"]
+	path = 3rd-party/sylvan
+	url = https://github.com/trolando/sylvan.git
